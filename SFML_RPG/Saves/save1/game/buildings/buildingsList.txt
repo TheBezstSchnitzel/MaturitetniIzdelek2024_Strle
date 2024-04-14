@@ -1,0 +1,16 @@
+ChickenCoop
+0
+CowBarn
+0
+MediumHouse
+0
+PigBarn
+0
+SmallHouse
+0
+carrotPlant
+0
+farmland
+0
+potatoPlant
+0
