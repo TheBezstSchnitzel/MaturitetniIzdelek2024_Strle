@@ -119,20 +119,22 @@ void TutorialState::initKeybinds(){
 }
 
 void TutorialState::initSlides(){
-	this->slides[0] = new Slide("MOVEMENT");
-	this->slides[0]->setText("W - MOVE UP \n\nS - MOVE DOWN \n\nA - MOVE LEFT\n\nD - MOVE RIGHT\n\n /SAME IN THE EDITOR/");
-	this->slides[1] = new Slide("GAMEPLAY");
-	this->slides[1]->setText("ESC - PAUSE \n\nG - INVENTORY \n\nV - ZOOM IN/OUT\n\nE - INTERACT\n\nRIGHT MOUSE BUTTON - USE ITEM");
-	this->slides[2] = new Slide("GAMEPLAY 2");
-	this->slides[2]->setText("1-9 - HOTBAR SLOTS 1-9 \n\nTAB - CHANGE EQUIPED ITEM OPTION\n\nTHE GOAL OF THIS GAME:\n\nbuild your own farm, and have fun doing it.\n\n");
-	this->slides[3] = new Slide("HOW TO PLAY");
-	this->slides[3]->setText("You start with a set of money that you can use in\n\na Market building to buy the equipment to start.\n\nUse hoe item to make farmland that u can use to\n\nplant seeds in. By using BuildPlan you can build\n\ndiffrent structures.");
-	this->slides[4] = new Slide("STRUCTURES");
-	this->slides[4]->setText("Plants - when grown can be picked up\n\nHouses - used to skip the night\n\nBarns - fill with pigs,cows => get products\n\nCoop - fill with chickens => get eggs\n\n");
-	this->slides[5] = new Slide("EDITOR");
-	this->slides[5]->setText("ESC - PAUSE\n\nC - COLLISION ON/OFF\n\nL - TILE LOCK\n\nRIGHT MOUSE BUTTON - REMOVE TILE\n\nLEFT MOUSE BUTTON - PLACE TILE");
-	this->slides[6] = new Slide("EDITOR 2");
-	this->slides[6]->setText("When you open editor you must first load the\n\nmap from pause menu, and same\n\nwhen changing seasons. When you are done you\n\nmust save the map from pause menu if you\n\nwant to use it.");
+	this->slides[0] = new Slide("BEFOR YOU PLAY");
+	this->slides[0]->setText("Current map is very basic so it is suggested that\n\nyou customize it before playing.");
+	this->slides[1] = new Slide("MOVEMENT");
+	this->slides[1]->setText("W - MOVE UP \n\nS - MOVE DOWN \n\nA - MOVE LEFT\n\nD - MOVE RIGHT\n\n /SAME IN THE EDITOR/");
+	this->slides[2] = new Slide("GAMEPLAY");
+	this->slides[2]->setText("ESC - PAUSE \n\nG - INVENTORY \n\nV - ZOOM IN/OUT\n\nE - INTERACT\n\nRIGHT MOUSE BUTTON - USE ITEM");
+	this->slides[3] = new Slide("GAMEPLAY 2");
+	this->slides[3]->setText("1-9 - HOTBAR SLOTS 1-9 \n\nTAB - CHANGE EQUIPED ITEM OPTION\n\nTHE GOAL OF THIS GAME:\n\nbuild your own farm, and have fun doing it.\n\n");
+	this->slides[4] = new Slide("HOW TO PLAY");
+	this->slides[4]->setText("You start with a set of money that you can use in\n\na Market building to buy the equipment to start.\n\nUse hoe item to make farmland that u can use to\n\nplant seeds in. By using BuildPlan you can build\n\ndiffrent structures.");
+	this->slides[5] = new Slide("STRUCTURES");
+	this->slides[5]->setText("Plants - when grown can be picked up\n\nHouses - used to skip the night\n\nBarns - fill with pigs,cows => get products\n\nCoop - fill with chickens => get eggs\n\n");
+	this->slides[6] = new Slide("EDITOR");
+	this->slides[6]->setText("ESC - PAUSE\n\nC - COLLISION ON/OFF\n\nL - TILE LOCK\n\nRIGHT MOUSE BUTTON - REMOVE TILE\n\nLEFT MOUSE BUTTON - PLACE TILE");
+	this->slides[7] = new Slide("EDITOR 2");
+	this->slides[7]->setText("When you open editor you must first load the\n\nmap from pause menu, and same\n\nwhen changing seasons. When you are done you\n\nmust save the map from pause menu if you\n\nwant to use it.");
 }
 
 TutorialState::TutorialState(StateData* state_data, Game* game) : State(state_data), game(game) {
@@ -148,7 +150,7 @@ TutorialState::~TutorialState(){
 	for (it = this->buttons.begin(); it != this->buttons.end(); ++it) {
 		delete it->second;
 	}
-	for (int i = 0; i < 6; ++i) {
+	for (int i = 0; i < 7; ++i) {
 		delete this->slides[i];
 		this->slides[i] = nullptr;
 	}
@@ -190,7 +192,7 @@ void TutorialState::updateSlides(){
 void TutorialState::checkSlidesButtons(){
 	if (this->currSlide == 0)this->buttons["PREVIOUS_SLIDE"]->disable();
 	else this->buttons["PREVIOUS_SLIDE"]->enable();
-	if (this->currSlide == 6)this->buttons["NEXT_SLIDE"]->disable();
+	if (this->currSlide == 7)this->buttons["NEXT_SLIDE"]->disable();
 	else this->buttons["NEXT_SLIDE"]->enable();
 }
 

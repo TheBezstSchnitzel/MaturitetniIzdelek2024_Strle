@@ -146,7 +146,7 @@ void GameState::initTextures(){
 }
 
 void GameState::initMarket(){
-	this->buildings["Market"][0] = new Market(sf::Vector2f(100.f, 100.f));
+	this->buildings["Market"][0] = new Market(sf::Vector2f(324.f, 32.f));
 }
 
 void GameState::initAudio(){

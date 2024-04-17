@@ -114,7 +114,6 @@ void DefaultEditorMode::updateGui(const float & dt){
 		"\n" << this->editorStateData->mousePosGrid->x << " " << this->editorStateData->mousePosGrid->y <<
 		"\n" << this->textureRect.left << " " << this->textureRect.top <<
 		"\n" << "Collision: " << this->collision <<
-		"\n" << "Type: " << this->type <<
 		"\n" << "Tiles: " << this->tileMap->getLayerSize(this->editorStateData->mousePosGrid->x, this->editorStateData->mousePosGrid->y, this->layer) <<
 		"\n" << "Tile lock: " << this->tileAddLock;
 

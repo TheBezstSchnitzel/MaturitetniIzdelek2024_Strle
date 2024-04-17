@@ -36,7 +36,7 @@ private:
 	sf::RectangleShape infoBackground;
 	//slidi
 	int currSlide;
-	Slide* slides[7];
+	Slide* slides[8];
 	sf::Text title;
 	sf::Text infoText;
 
